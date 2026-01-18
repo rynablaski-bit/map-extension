@@ -1,0 +1,149 @@
+/*
+  1. Base Page Setup
+*/
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  width: 100%;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+/*
+  2. Host Page Takeover
+*/
+body > * {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+#ryan-console-root,
+#ryan-console-root * {
+  display: block !important;
+  visibility: visible !important;
+  box-sizing: border-box; /* This is a much better default */
+}
+
+/*
+  3. Main Layout
+*/
+#ryan-console-root {
+  display: flex !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #f4f4f4; /* Main app background */
+}
+
+/*
+  4. Map Container (with your chosen margins)
+*/
+#map-container {
+  flex: 1; /* Grow to fill space */
+  height: 92vh;
+  margin-top: 5vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  
+  border: 1px solid #ccc;
+  background: #f0f0f0;
+  overflow: hidden;
+  
+  /* Center content when there's no map */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+  5. Sidebar
+*/
+#sidebar-container {
+  flex-basis: 300px;
+  flex-shrink: 0;
+  height: 100%;
+  background: #ffffff;
+  border-left: 2px solid #ccc;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+#sidebar-container h2 {
+  margin-top: 0;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+/*
+  6. New UI Element Styles
+*/
+.button {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.button:hover {
+  background-color: #0056b3;
+}
+
+.editor-setup-view, .loading-view {
+  text-align: center;
+}
+
+.editor-setup-view h3 {
+  font-size: 20px;
+  color: #555;
+}
+
+.styled-select {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin: 0 10px;
+}
+
+.tool-section {
+  margin-top: 20px;
+}
+
+.tool-section h3 {
+  font-size: 16px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.tool-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.tool-button.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.tool-button:hover:not(.active) {
+  background-color: #f8f9fa;
+}

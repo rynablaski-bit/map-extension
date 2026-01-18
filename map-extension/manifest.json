@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Warehouse Map Overlay",
+  "version": "1.0",
+  "description": "Overlays the warehouse map onto the internal site.",
+  
+  "permissions": [
+    "storage"
+  ],
+
+    "host_permissions": [
+    "*://*.example.com/*"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.example.com/*"],
+      "css": ["styles.css"],
+      "js": ["konva.min.js", "app.js"]
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "FirstRequest-twinmap.json",
+        "SecondRequest-twinmap.json",
+        "Resources-response.json"
+      ],
+      "matches": ["*://*.example.com/*"]
+    }
+  ]
+}
